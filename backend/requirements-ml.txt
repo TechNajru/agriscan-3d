@@ -1,0 +1,2 @@
+# Only needed to run a trained YOLOv8 defect model (AGPL-3.0 licence, see README)
+ultralytics>=8.2

@@ -1,0 +1,17 @@
+# Render blueprint for the API. The frontend goes to Vercel (see README, "Deployment").
+services:
+  - type: web
+    name: agriscan-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: CORS_ORIGINS
+        sync: false            # set to your Vercel URL, e.g. https://agriscan.vercel.app
+      - key: HISTORY_LIMIT
+        value: "10"
+    disk:
+      name: agriscan-data
+      mountPath: /data
+      sizeGB: 1

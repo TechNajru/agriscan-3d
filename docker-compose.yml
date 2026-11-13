@@ -1,0 +1,20 @@
+# docker compose up --build   ->  app on http://localhost:3000, API on http://localhost:8000
+# Camera capture needs HTTPS or localhost, so use localhost when testing the webcam.
+services:
+  api:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    environment:
+      CORS_ORIGINS: http://localhost:3000
+    volumes:
+      - agriscan-data:/data
+      - ./backend/models:/app/models:ro
+    ports: ["8000:8000"]
+  web:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args: { NEXT_PUBLIC_API_URL: http://localhost:8000 }
+    depends_on: [api]
+    ports: ["3000:3000"]
+volumes:
+  agriscan-data:

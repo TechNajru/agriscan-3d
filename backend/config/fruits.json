@@ -1,0 +1,13 @@
+{
+  "apple": {
+    "label": "Apple",
+    "ripeness": {
+      "green_hue": [35, 85], "brown_hue": [8, 25],
+      "unripe_green": 0.60, "partial_green": 0.25, "overripe_brown": 0.15
+    },
+    "min_size_mm_for_A": 65,
+    "size_classes_mm": {"small_below": 60, "large_above": 80},
+    "relative_size_classes": {"small_below": 0.12, "large_above": 0.30},
+    "density_g_cm3": 0.80
+  }
+}

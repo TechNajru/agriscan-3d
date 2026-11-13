@@ -1,0 +1,5 @@
+{
+  "_comment": "One entry per source dataset folder. Map each source class name to one of the 6 target classes, or to null to drop it.",
+  "my_apple_defects_v1": {"scab": "fungal spot", "bruised": "bruise", "rotten": "rot", "healthy": null, "crack": "crack"},
+  "another_source": {"Bruise": "bruise", "Cut": "cut", "Insect": "insect damage"}
+}

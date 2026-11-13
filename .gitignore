@@ -1,0 +1,13 @@
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/data/
+backend/models/*.pt
+data/
+runs/
+.env
+.env.local
+*.egg-info/
+.DS_Store

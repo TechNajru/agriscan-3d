@@ -1,0 +1,12 @@
+{
+  "reject_area": 0.25,
+  "c_area": 0.10,
+  "b_area": 0.02,
+  "c_defect_count": 4,
+  "severe_types": ["rot", "fungal spot"],
+  "severe_min_conf": 0.5,
+  "min_uniformity_A": 0.60,
+  "min_circularity_A": 0.80,
+  "quality_gate": {"blur_min": 50.0, "dark_min": 60.0, "min_side_px": 320},
+  "fallback_detector": {"threshold": 28.0, "min_area_ratio": 0.003, "max_defects": 10}
+}

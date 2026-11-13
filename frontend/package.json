@@ -1,0 +1,30 @@
+{
+  "name": "agriscan-3d-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sync-i18n": "node scripts/sync-i18n.js",
+    "dev": "npm run sync-i18n && next dev",
+    "build": "npm run sync-i18n && next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/dm-mono": "^5.0.0",
+    "@fontsource/dm-sans": "^5.0.0",
+    "@fontsource/fraunces": "^5.0.0",
+    "@fontsource/noto-sans-devanagari": "^5.0.0",
+    "next": "14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.4.0"
+  }
+}

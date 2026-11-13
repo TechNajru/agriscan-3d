@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(1200px 500px at 85% -10%, rgba(127,166,80,.16), transparent 60%),
+    radial-gradient(900px 400px at -10% 10%, rgba(216,162,58,.12), transparent 60%);
+  background-attachment: fixed;
+}
+html[lang="hi"] body { line-height: 1.7; }
+::selection { background: #cfe3c4; }
+
+@layer components {
+  .card { @apply bg-card border border-line rounded-2xl; }
+  .tag-card { @apply card shadow-tag relative; }
+  .tag-card::before {            /* the punched hole of a produce tag */
+    content: ""; position: absolute; top: 14px; left: 50%; width: 14px; height: 14px; margin-left: -7px;
+    border-radius: 9999px; background: #F4EFE4; border: 1px solid #D9CFB8; box-shadow: inset 0 1px 2px rgba(28,43,33,.2);
+  }
+  .label { @apply font-mono text-[11px] uppercase tracking-[.14em] text-muted; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[15px] font-medium transition
+         focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-forest text-white hover:bg-forest-dark active:scale-[.98]; }
+  .btn-ghost { @apply btn border border-line bg-card text-ink hover:border-forest hover:text-forest; }
+  .seg { @apply inline-flex rounded-full border border-line bg-card p-1 gap-1; }
+  .seg button { @apply rounded-full px-4 py-2 text-sm font-medium text-muted transition; }
+  .seg button[aria-pressed="true"], .seg button[aria-selected="true"] { @apply bg-forest text-white; }
+  .divider { border-top: 1.5px dashed #D9CFB8; }
+  .grade-stamp {
+    display: grid; place-items: center; border-radius: 9999px; border: 4px solid currentColor; transform: rotate(-7deg);
+    font-family: var(--font-display, "Fraunces"), "Noto Sans Devanagari", serif; font-weight: 700; line-height: 1;
+    box-shadow: inset 0 0 0 4px #FBF8F1, inset 0 0 0 5.5px currentColor; background: #FBF8F1; user-select: none;
+  }
+}
+
+.scan-line { position: absolute; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #7FA650, #fff, #7FA650, transparent);
+  box-shadow: 0 0 18px 4px rgba(127,166,80,.65); animation: scan 1.8s ease-in-out infinite; }
+.corner { position: absolute; width: 22px; height: 22px; border-color: #2F5D3A; border-style: solid; border-width: 0; }
+.corner.tl { top: 8px; left: 8px; border-top-width: 3px; border-left-width: 3px; border-top-left-radius: 8px; }
+.corner.tr { top: 8px; right: 8px; border-top-width: 3px; border-right-width: 3px; border-top-right-radius: 8px; }
+.corner.bl { bottom: 8px; left: 8px; border-bottom-width: 3px; border-left-width: 3px; border-bottom-left-radius: 8px; }
+.corner.br { bottom: 8px; right: 8px; border-bottom-width: 3px; border-right-width: 3px; border-bottom-right-radius: 8px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
